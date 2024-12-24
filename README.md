@@ -79,7 +79,104 @@ We tune Hyperparameters for the models and choose the best one which optimizes t
 
 ### SVC
 
-The parameters we tune are regularization parameter C and Kernel Coefficient γ (gamma) 
+The parameters we tune are regularization parameter C and Kernel Coefficient γ (gamma) <br>
+
+![image](https://github.com/user-attachments/assets/f7db4d79-fc78-45c9-8960-3cfeb9481ed6) <br>
+
+So here we can see when C is 100 and Gamma is 0.01 , The validation Accuracy is the best. So hence , we chose these hyperparameters as they generalize better
+So these are the best hyperparameters 
+
+
+### KNN
+
+The parameters we tune are k value, which is how many neighbours are considered
+And distance Metric.
+
+![image](https://github.com/user-attachments/assets/ef11147f-1f07-4d57-97e6-2f67b88737ee) <br>
+
+So here we can see when n_neighbors is 10 and Metric is Manhattan , The validation Accuracy is the best. So hence, we chose these hyperparameters as they generalize better. So these are the best hyperparameters 
+
+
+Random Forest 
+
+The parameters we tune are n_estimator that controls the number of trees , (More trees) and max_depth which determines the maximum depth of a tree
+
+![image](https://github.com/user-attachments/assets/b2238721-c694-495d-8057-a18d67a0066f) <br>
+
+So here we can see when n_estimator is 100 and max_depth is 10 , The validation Accuracy is the best. So hence, we chose these hyperparameters as they generalize better. So these are the best hyperparameters 
+
+
+## Evaluation Metric 
+
+The measure of success in this project is the accuracy of the image classification. Accuracy in this context means if the image classification if correct, meaning if the image has a fire, then the prediction says it has a fire. We see if the model can generalize good and can correctly classify the image to tell if the image has a fire or not.
+
+This is the real goal for the model, as correctly classifying the image would help in contacting the fire department on time, so if there is a fire, it can be dealt with it quickly for the safety of the people. 
+
+
+
+## Results
+
+Below are the results for each of the model and the time it took for the model to train. The accuracy here is how well it performed on the test set, which is unseen. This shows how well the model can generalize. The values of the accuracy are in percentage, it is the number of correctly classified images / total images in the validation test set. 
+
+![image](https://github.com/user-attachments/assets/0d506879-d4f4-489f-a8f7-dc5b3ffbddb0) <br>
+
+## Result Comparison 
+
+So from the results above, we can see that 
+
+In terms of Test Accuracy
+Random Forest is the best, followed by KNN and then SVC is at the last
+(Random Forest > KNN> SVC ) 
+
+In terms of time
+KNN is the best, followed by Random Forest and then SVC is at the last
+(KNN > Random Forest > SVC) 
+
+Lets compare the models to a trivial baseline like a model which picks in random between the classes with equal probability. As we have 2 classes, the probability of picking a class is ½ or 50%. So we know that the accuracy of this trivial baseline model would be around 50 percent.
+
+The KNN , SVC and Random Forest model all have better accuracy than the trivial baseline models as all 3 models have a accuracy more than 90% while the trivial model just has a 50 percent. So we know that the KNN , SVC and Random forest models perform better than a trivial model .
+
+
+## Result Explanation 
+
+For KNN we can see the best hyperparameters are n_neighbors is 10 and Metric is Manhattan. The model performs pretty good in smaller datasets as KNN is based on proximity based classification, but if the dataset grows to a larger number, KNN would not be great as it would be computationally expensive. In this problem, the dataset was small, thus we can see KNN performed pretty well. KNN stores it in memory and uses it to classify new data when it comes up. This is the reason why it is the fastest as well as there is no training phase for the model. 
+
+For SVC, we can see the best hyperparameters are when C is 100 and Gamma is 0.01. For SVC, It is able to make a good decision boundary, but the time it takes to train and tune the hyperparameters is the highest. This could lead to training and tune SVC computationally expensive. SVC also performs good with small datasets as it will be able to find better decision boundary and be able to separate the classes. In this case , SVC performed good, but not better than KNN and Random Forest. Maybe SVC needs to go through more hyperparameter tuning to make a better decision boundary for the accuracy to increase.  
+
+For Random Forest, we can see the best hyperparameters are when n_estimator is 100 and max_depth is 10. The accuracy for Random Forest is the best among all the other models, and the time it took was also in the middle. Because it is dependent on making multiple decision trees, it is not affected by a lot of noisy data and does not require additional normalization. Random Forest works good for small and larger datasets too. Because of the randomness during creation of individual trees , this model also fights overfitting. 
+
+
+## Interpretation of Results 
+
+KNN is great in image classification for smaller datasets and simpler problems. The problems KNN struggles with is when there is a big dataset or noisy data , then KNN does not perform good. 
+
+SVC is great in image classification for small  datasets as well . It is suitable for high dimensional cases where there are a large number of features. SVC struggles with larger datasets as well. But it can also build a perfect decision boundary for deciding between classes. 
+
+Random Forest compared to KNN and SVC is more accurate, and it also performs better on small and even larger datasets. It is not sensitive to scale of features and is not a distance based mode , making it better in some aspects, and it has very less overfitting. 
+
+
+## Conclusions
+
+For the problem ( To identify if there is a fire or not) all models would be great but I believe Random Forest Model would be great for this case as it has the highest accuracy and does not take a lot of time for training, making it cheaper to train. The 2 main reasons of choosing this model is also because, it performs better on larger datasets and in our problem to identify a fire , we would have a lot for training data so that it can learn better. It also prevents ( less) overfitting, so it can generalize better to recognize a fire and not just a certain situation or certain type of fire.
+
+
+
+
+## Appendix 
+
+
+How to run the code 
+
+To run the script and test out different models , run: 
+
+“python3 main.py --model RandomForest”   → Runs the Random Forest model 
+
+“python3 main.py --model KNN”  → Runs the KNN model 
+
+“python3 main.py --model SVC”  → Runs the SVC Model
+
+
+
 
 
 
