@@ -23,11 +23,11 @@ For the problem stated above, the input would be images of random places. These 
 
 
 
-For example : 
-![Img_20897](https://github.com/user-attachments/assets/2e63c473-3b9c-445b-8adf-28a3ecad9957)
-This image has fire
+For example : <br>
+![Img_20897](https://github.com/user-attachments/assets/2e63c473-3b9c-445b-8adf-28a3ecad9957) <br>
+This image has fire <br>
 
-![Img_32437](https://github.com/user-attachments/assets/a952551e-fd71-4449-95bc-d62e5def3975)
-This image has no fire
+![Img_32437](https://github.com/user-attachments/assets/a952551e-fd71-4449-95bc-d62e5def3975) <br>
+This image has no fire <br>
 
 
