@@ -97,7 +97,7 @@ And distance Metric.
 So here we can see when n_neighbors is 10 and Metric is Manhattan , The validation Accuracy is the best. So hence, we chose these hyperparameters as they generalize better. So these are the best hyperparameters 
 
 
-Random Forest 
+### Random Forest 
 
 The parameters we tune are n_estimator that controls the number of trees , (More trees) and max_depth which determines the maximum depth of a tree
 
